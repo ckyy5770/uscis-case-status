@@ -79,12 +79,10 @@ def UpdateCaseStatus(num_range):
 def UpdateCaseStatusAsync(num_range):
     pool = Pool()
     futures = []
-    index = 0
     for case in num_range:
         receipt = 'YSC' + str(case)
         print('Fetching Case Status: ' + receipt)
         futures.append(pool.apply_async(GetCaseStatus, [receipt]))
-        index += 1
 
     file_name = 'case_status_' + date.today().isoformat()
     with open(file_name, 'w') as of:
