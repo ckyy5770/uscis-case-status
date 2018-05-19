@@ -4,6 +4,8 @@ from datetime import date
 from multiprocessing import Pool
 
 URL = 'https://egov.uscis.gov/casestatus/mycasestatus.do'
+# Important Notice: please limit your range size to 1000 receipts,
+# larger number may cause uscis block your ip.
 RECEIPT_NUM_RANGE = range(1890142000, 1890142500)
 
 
